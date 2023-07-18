@@ -57,7 +57,7 @@ function SignUpForm() {
     <>
       <div className='Sign-up-container'>
         <h2>Don't have an account</h2>
-        <span>Sign up with email and password</span>
+        <h2>Sign up with email and password</h2>
         <form onSubmit={handleSubmit}>
          <FormInput type="text" name="displayName" onChange={handleChange} value={displayName} required placeholder='Display Name' />
          <FormInput placeholder='Email'
