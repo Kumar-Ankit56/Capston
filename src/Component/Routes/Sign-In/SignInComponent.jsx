@@ -5,7 +5,7 @@ import {CreateUserfromAuth} from '../../utils/FirebaseUtils/FirebaseUtils'
 function SignInComponent() {
   const logGoogleUser = async () => {
     const {user} = await signInWithGooglePopup();
-    CreateUserfromAuth(user);
+    const userRef = await CreateUserfromAuth(user);
   };
   return (
     <>
