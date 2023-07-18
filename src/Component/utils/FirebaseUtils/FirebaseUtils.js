@@ -7,6 +7,10 @@ import {
   GoogleAuthProvider,
 } from 'firebase/auth';
 
+import {
+  getFirestore,doc,getDoc,setDoc
+} from 'firebase/firestore'
+
 const firebaseConfig = {
     apiKey: "AIzaSyCQPHGiLCPamTKjQbp56EkJcAVrODVJ1TA",
     authDomain: "capston-clothing.firebaseapp.com",
@@ -25,3 +29,11 @@ provider.setCustomParameters({
 
 export const auth = getAuth(firbaseapp);
 export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
+
+export const db =getFirestore();
+export const CreateUserfromAuth = async(userAuth)=>{
+  const userRef = doc(db,'users',userAuth.uid);
+  console.log(userRef);
+  const userSnapshot = await getDoc(userRef);
+  console.log(userSnapshot);
+}
